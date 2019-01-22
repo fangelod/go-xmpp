@@ -193,3 +193,14 @@ func xmlEscape(s string) string {
 	xml.Escape(&b, []byte(s))
 	return b.String()
 }
+
+// Close closes the TCP connection the client has with the remote host
+func (c *Client) Close() error {
+	if err := c.conn.Close(); err != nil {
+		return err
+	}
+
+	c.Session = nil
+
+	return nil
+}
