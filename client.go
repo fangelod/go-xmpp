@@ -180,6 +180,8 @@ func (c *Client) Send(packet Packet) error {
 		if io.EOF == err {
 			return errors.New("cannot verify connection is still alive " + err.Error())
 		}
+
+		fmt.Println("ERR: %+v", err)
 	}
 
 	if _, err := fmt.Fprintf(c.conn, string(data)); err != nil {
