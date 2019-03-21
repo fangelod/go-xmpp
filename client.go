@@ -5,6 +5,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"io"
 	"net"
 	"strings"
 	"time"
@@ -171,6 +172,14 @@ func (c *Client) Send(packet Packet) error {
 	data, err := xml.Marshal(packet)
 	if err != nil {
 		return errors.New("cannot marshal packet " + err.Error())
+	}
+
+	buf := make([]byte, 1024)
+	_, err = c.conn.Read(buf)
+	if err != nil {
+		if io.EOF == err {
+			return errors.New("cannot verify connection is still alive " + err.Error())
+		}
 	}
 
 	if _, err := fmt.Fprintf(c.conn, string(data)); err != nil {
