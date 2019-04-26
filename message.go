@@ -13,6 +13,7 @@ type Message struct {
 	PacketAttrs
 	Subject string `xml:"subject,omitempty"`
 	Body    string `xml:"body,omitempty"`
+	Node    Node   `xml:",any,omitempty"`
 	Thread  string `xml:"thread,omitempty"`
 	Error   Err    `xml:"error,omitempty"`
 }
