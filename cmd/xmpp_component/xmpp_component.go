@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"gosrc.io/xmpp"
+	"github.com/fangelod/go-xmpp"
 )
 
 func main() {

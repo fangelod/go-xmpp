@@ -1,4 +1,4 @@
-module gosrc.io/xmpp
+module github.com/fangelod/go-xmpp
 
 go 1.9
 

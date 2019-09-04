@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"gosrc.io/xmpp/iot"
+	"github.com/fangelod/go-xmpp/iot"
 )
 
 func TestControlSet(t *testing.T) {

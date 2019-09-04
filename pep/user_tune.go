@@ -1,9 +1,9 @@
-package pep // import "gosrc.io/xmpp/pep"
+package pep
 
 import (
 	"encoding/xml"
 
-	"gosrc.io/xmpp"
+	"github.com/fangelod/go-xmpp"
 )
 
 type iq struct {

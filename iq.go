@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"gosrc.io/xmpp/iot"
+	"github.com/fangelod/go-xmpp/iot"
 )
 
 /*
